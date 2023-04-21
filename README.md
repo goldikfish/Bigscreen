@@ -1,6 +1,6 @@
 # Bigscreen
 - 基于Django的Web开发——可视化大屏之就业情况
-- 项目说明及核心代码分析地址：
+- 项目说明及核心代码分析地址：[click here](http://t.csdn.cn/57M5Z)
 
 ## 使用技术
 - 后端：Django+Mysql
