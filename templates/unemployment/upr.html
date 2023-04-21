@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //自定义执行信息删除提示判断，参数uu是成功的删除url地址
+        function doDel(uu){
+            if(confirm("确定要删除吗？")){
+                //网页跳转
+                window.location=uu;
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <center>
+        <h2>信息统计管理</h2>
+        <a href="{% url 'indexupr' %}">浏览失业率情况</a>
+        <a href="{% url 'addupr' %}">添加失业率信息</a>
+        <hr/>
+        <table width="'800" border="1">
+            <tr>
+                <th>ID</th>
+                <th>月度</th>
+                <th>全国城镇调查失业率(%)</th>
+                <th>全国16-24岁人口城镇调查失业率(%)</th>
+                <th>全国25-59岁人口城镇调查失业率(%)</th>
+                <th>操作</th>
+            </tr>
+            {% for upr in uprlist %}
+                <tr>
+                    <td>{{upr.id}}</td>
+                    <td>{{upr.time}}</td>
+                    <td>{{upr.uprate_1}}</td>
+                    <td>{{upr.uprate_2}}</td>
+                    <td>{{upr.uprate_3}}</td>
+                    <td>
+                        <a href="">编辑</a>
+                        <a href="javascript:doDel('{% url 'delupr' upr.id %}');">删除</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>

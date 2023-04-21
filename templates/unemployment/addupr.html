@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h2>信息统计管理</h2>
+        <a href="{% url 'indexupr' %}">浏览失业率情况</a>
+        <a href="{% url 'addupr' %}">添加失业率信息</a>
+        <hr/>
+
+        <h3>添加失业率信息</h3>
+        <form action="{% url 'insertupr' %}" method="post">
+            {% csrf_token %}
+            <table width="460" border="0">
+               <tr>
+                 <td>日期（年-月）：</td>
+                 <td><input type="text" name="time"/></td>
+               </tr>
+               <tr>
+                 <td>全国城镇调查失业率(%)：</td>
+                 <td><input type="text" name="uprate_1"/></td>
+               </tr>
+               <tr>
+                 <td>全国16-24岁人口城镇调查失业率(%)：</td>
+                 <td><input type="text" name="uprate_2"/></td>
+               </tr>
+               <tr>
+                <td>全国25-59岁人口城镇调查失业率(%)：</td>
+                <td><input type="text" name="uprate_3"/></td>
+              </tr>
+               <tr>
+                 <td colspan="2" align="center">
+                    <input type="submit" value="添加"/>
+                    <input type="reset" value="重置"/>
+                 </td>
+               </tr>
+            </table>
+        </form>
+    </center>
+</body>
+</html>

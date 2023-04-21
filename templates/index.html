@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--更多资源：https://gitee.com/iGaoWei/big-data-view -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="static/css/index.css">
+    <title>{{name}}</title>
+    <script src="static/js/jquery-2.2.1.min.js"></script>
+    <script src="static/js/rem.js"></script>
+    <script src="static/js/echarts.min.js"></script>
+    <script src="static/js/index.js?version=1.1.5"></script>
+    <script language="javascript" src="static/js/myec.js?version=1.0.2"></script>
+</head>
+<body>
+    <div class="t_container">
+        <header class="t_h_bg">
+            <span>{{name}}</span>
+        </header>
+        <main class="t_main">
+            <div class="t_box">
+                <header class="t_title">
+                    <span>各行业平均薪资</span>
+                    <span class="t_number">106837.00</span>
+                </header>
+                <div id="chart_1" class="echart" style="width: 100%; height: 3.9rem;"></div>
+            </div>
+            <div class="t_box">
+                <header class="t_title">
+                    <span>失业率统计</span>
+                </header>
+                <div id="main" class="echart" style="width: 75%; height: 2.4rem;"></div>
+                <body>
+                    <script type="text/javascript">
+                    var myChart = echarts.init(document.getElementById('main')); 
+                    var option;
+                    option = {
+                    tooltip: {
+                        trigger: 'item'
+                    },
+                    legend: {
+                        top: '0%',
+                        left: 'center'
+                    },
+                    series: [
+                        {
+                        name: 'Access From',
+                        type: 'pie',
+                        radius: ['40%', '70%'],
+                        avoidLabelOverlap: false,
+                        itemStyle: {
+                            borderRadius: 15,
+                            borderColor: '#fff',
+                            borderWidth: 2
+                        },
+                        label: {
+                            show: false,
+                            position: 'center'
+                        },
+                        emphasis: {
+                            label: {
+                            show: true,
+                            fontSize: 20,
+                            fontWeight: 'bold'
+                            }
+                        },
+                        labelLine: {
+                            show: false
+                        },
+                        data: [
+                            { value: 5.6, name: '全国城镇调查失业率(%)',itemStyle: { color: '#4682B4' } },
+                            { value: 5.4, name: '全国本地户籍人口城镇调查失业率(%)',itemStyle: { color: '#F4A460' } },
+                            { value: 18.1, name: '全国16-24岁人口城镇调查失业率(%)',itemStyle: { color: '#FF8C00' } },
+                            { value: 4.8, name: '全国25-59岁人口城镇调查失业率(%)',itemStyle: { color: '#FFF5EE' } },
+                            { value: 5.7, name: '31个大城市城镇调查失业率(%)',itemStyle: { color: '	#AFEEEE' } }
+                        ]
+                        }
+                    ]
+                    }; 
+                    myChart.setOption(option);
+                </script>
+                </body>
+            </div>
+            <div class="t_box">
+                <header class="t_title">
+                    <span>不同人群失业率折线图</span>
+                </header>
+                <div class="echart" id="ec1" style="width: 100%; height: 3rem;"></div>
+            </div>
+            <div class="t_box">
+                <div class="main_table t_btn8">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th><a href="{% url 'indexupr' %}" target="_blank"><font color="DarkOrange">月份（加载更多）</font></a></th>
+                            <th>全国城镇调查失业率(%)</th>
+                            <th>全国16-24岁人口城镇调查失业率(%)</th> 
+                            <th>全国25-59岁人口城镇调查失业率(%)</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2023-02</td>
+                                <td>5.6</td>
+                                <td>18.1</td>
+                                <td>4.8</td>
+                            </tr>
+                            <tr>
+                                <td>2023-01</td>
+                                <td>5.5</td>
+                                <td>17.3</td>
+                                <td>4.7</td>
+                            </tr>
+                            <tr>
+                                <td>2022-12</td>
+                                <td>5.5</td>
+                                <td>16.7</td>
+                                <td>4.8</td>
+                            </tr>
+                            <tr>
+                                <td>2022-11</td>
+                                <td>5.7</td>
+                                <td>17.1</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>2022-10</td>
+                                <td>5.5</td>
+                                <td>17.9</td>
+                                <td>4.7</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
