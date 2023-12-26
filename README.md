@@ -6,6 +6,7 @@
 - 后端：Django+Mysql
 - 前端：HTML+CSS+JS
 - 可视化图表组件：Echarts
+- 数据集涉及爬虫
 
 ## 成果演示
 ![bigscreen](https://user-images.githubusercontent.com/112796030/233643809-f8cefd33-ecab-41d3-b7ab-61ad358559ab.png)
